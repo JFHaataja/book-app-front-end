@@ -1,0 +1,54 @@
+$theme-colors: (
+  "primary": #CDA16A,
+  "primary-darker": #9a7951,
+  "secondary": #6A96CD,
+  "success": #98c5af,
+  "danger": #CD6A6A,
+  "dark": #251d13,
+  "white": #f9f9f9,
+);
+
+@import "~bootstrap/scss/bootstrap";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  background-color: $white;
+}
+
+.App {
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.bg-header {
+  background: #F3F3F4;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: top;
+  background-repeat: no-repeat;
+  height: 15vh;
+}
+
+.vh-50 {
+  height: 50vh;
+}
+
+.bg-negative {
+  background-color: $danger!important;
+}
+
+.bg-positive {
+  background-color: $success!important;
+}
+
+.rounded-20 {
+  border-radius: 20px;
+}
+
+.rounded-20-end {
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+}
