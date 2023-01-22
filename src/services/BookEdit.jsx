@@ -6,6 +6,7 @@ import SaveButton from 'components/elements/Button/SaveButton';
 import DeleteButton from 'components/elements/Button/DeleteButton';
 
 const BookEdit = ({
+    editMode,
     setEditMode,
     setPositiveToast,
     setToast,
@@ -67,11 +68,12 @@ const BookEdit = ({
                         setPositiveToast(true);
                         setShowToast(true);
                         window.scrollBy(0, -10000);
-
+                        setEditMode(!editMode)
                         setTimeout(() => {
                             setShowToast(false);
                         }, 5000);
-                        reloadNow(!reload);
+                        reloadNow(reload);
+
                     }
                 })
                 .catch((error) => {
@@ -82,7 +84,8 @@ const BookEdit = ({
 
                     setTimeout(() => {
                         setShowToast(false);
-                    }, 6000);
+                    }, 5000);
+                    setEditMode(false);
                 });
         } else {
             setToast('Book deletion cancelled successfully.');
@@ -93,6 +96,7 @@ const BookEdit = ({
             setTimeout(() => {
                 setShowToast(false);
             }, 5000);
+            setEditMode(false);
         }
     };
 

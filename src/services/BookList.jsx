@@ -110,9 +110,11 @@ const BookList = ({ setToast, setPositiveToast, setShowToast }) => {
                             setToast={setToast}
                             setShowToast={setShowToast}
                             bookForEdit={bookForEdit}
+                            setBookForEdit={setBookForEdit}
                             loading={loading}
                             setLoading={setLoading}
                             reloadNow={reloadNow}
+                            reload={reload}
                         />
                     )
                 }
