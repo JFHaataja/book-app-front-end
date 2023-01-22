@@ -51,7 +51,7 @@ const BookEdit = ({
                 window.scrollBy(0, -10000);
                 setTimeout(() => {
                     setShowToast(false);
-                }, 6000);
+                }, 5000);
             });
     };
 
@@ -133,7 +133,6 @@ const BookEdit = ({
                     onChangeHandler={({ target }) =>
                         setNewDescription(target.value)
                     }
-                    requiredOrNot={false}
                     formGroupControlId="DescriptionEdit"
                 />
                 <div className="d-flex mt-5 justify-content-end">

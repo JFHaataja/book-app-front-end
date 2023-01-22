@@ -22,11 +22,10 @@ const BookAdd = ({
             author: newAuthor,
             description: newDescription,
         };
-        console.log(newBook);
         BookService.create(newBook)
             .then((response) => {
                 if (response.status === 200) {
-                    setToast('Added new Book: ' + newBook.title);
+                    setToast('Added new book ' + newBook.title);
                     setPositiveToast(true);
                     setShowToast(true);
                     window.scrollBy(0, -10000);
@@ -43,7 +42,7 @@ const BookAdd = ({
                 window.scrollBy(0, -10000);
                 setTimeout(() => {
                     setShowToast(false);
-                }, 6000);
+                }, 5000);
             });
     };
 
@@ -87,7 +86,6 @@ const BookAdd = ({
                     <SaveButton
                         btnVariant={'primary'}
                         btnType="submit"
-                        buttonId="saveBtnBookAdd"
                     />
                 </div>
             </Form>
