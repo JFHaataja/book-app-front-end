@@ -17,7 +17,6 @@ const BookList = ({ setToast, setPositiveToast, setShowToast }) => {
     const [bookForEdit, setBookForEdit] = useState('');
     const [loading, setLoading] = useState(false);
 
-
     useEffect(() => {
         setLoading(true);
         BookService.getAll().then((data) => {
@@ -120,9 +119,11 @@ const BookList = ({ setToast, setPositiveToast, setShowToast }) => {
                             setToast={setToast}
                             setShowToast={setShowToast}
                             bookForEdit={bookForEdit}
+                            setBookForEdit={setBookForEdit}
                             loading={loading}
                             setLoading={setLoading}
                             reloadNow={reloadNow}
+                            reload={reload}
                         />
                     )
                 }

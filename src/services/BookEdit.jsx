@@ -7,6 +7,7 @@ import SaveButton from 'components/elements/Button/SaveButton';
 import DeleteButton from 'components/elements/Button/DeleteButton';
 
 const BookEdit = ({
+    editMode,
     setEditMode,
     setPositiveToast,
     setToast,
@@ -14,11 +15,8 @@ const BookEdit = ({
     bookForEdit,
     setLoading,
     reload,
-    reloadNow
-    //  reload,
-    //  reloadNow,
-    // deleteBook,
-    // book
+    reloadNow,
+    setBookForEdit
 }) => {
     const [newBookId] = useState(bookForEdit.id);
     const [newAuthor, setNewAuthor] = useState(bookForEdit.author);
@@ -58,24 +56,24 @@ const BookEdit = ({
             });
     };
 
-    const deleteBook = (bookForEdit) => {
-        const response = window.confirm(`Delete book ${bookForEdit.title}?`);
+    const deleteBook = (newBook) => {
+        const response = window.confirm(`Delete book ${newBook.title}?`);
 
         if (response === true) {
             setLoading(true);
-            BookService.remove(bookForEdit.id)
+            BookService.remove(newBook.id)
                 .then((res) => {
                     if (res.status === 200) {
-                        setLoading(false);
-                        setToast(`Successfully deleted book ${bookForEdit.title}`);
+                        setToast(`Successfully deleted book ${newBook.title}`);
                         setPositiveToast(true);
                         setShowToast(true);
                         window.scrollBy(0, -10000);
-
+                        setEditMode(!editMode)
                         setTimeout(() => {
                             setShowToast(false);
                         }, 5000);
-                        reloadNow(!reload);
+                        reloadNow(reload);
+
                     }
                 })
                 .catch((error) => {
@@ -87,7 +85,8 @@ const BookEdit = ({
 
                     setTimeout(() => {
                         setShowToast(false);
-                    }, 6000);
+                    }, 5000);
+                    setEditMode(false);
                 });
         } else {
             setLoading(false);
@@ -99,6 +98,7 @@ const BookEdit = ({
             setTimeout(() => {
                 setShowToast(false);
             }, 5000);
+            setEditMode(false);
         }
     };
 
@@ -120,7 +120,7 @@ const BookEdit = ({
                         />
                         <FormGroup
                             formLabelText="Book Title"
-                            inputType="text"
+                            inputType="t§ext"
                             inputValue={newTitle}
                             inputPlaceholder="Book Title"
                             onChangeHandler={({ target }) => setNewTitle(target.value)}
