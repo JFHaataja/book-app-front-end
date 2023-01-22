@@ -1,4 +1,4 @@
-import { MdSave } from "react-icons/md";
+import { MdSave } from 'react-icons/md';
 
 export default function Save() {
     return (

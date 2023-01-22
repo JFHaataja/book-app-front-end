@@ -14,9 +14,8 @@ const BookList = ({ setToast, setPositiveToast, setShowToast }) => {
     const [editMode, setEditMode] = useState(false);
     const [reload, reloadNow] = useState(false);
     const [search, setSearch] = useState('');
-    const [bookForEdit, setBookForEdit] = useState('');
+    const [bookForEdit, setBookForEdit] = useState(false);
     const [loading, setLoading] = useState(false);
-
 
     useEffect(() => {
         setLoading(true);
@@ -33,16 +32,13 @@ const BookList = ({ setToast, setPositiveToast, setShowToast }) => {
     const editBooks = (book) => {
         setBookForEdit(book);
         setEditMode(!editMode);
-        setAddNewMode(false)
+        setAddNewMode(false);
     };
-    
 
     return (
         <>
-        <ContentLayout
-
-            search={
-                 (
+            <ContentLayout
+                search={
                     <SearchBar
                         placeHolder={'Search by book name'}
                         searchValue={search}
@@ -50,11 +46,8 @@ const BookList = ({ setToast, setPositiveToast, setShowToast }) => {
                         loading={loading}
                         setLoading={setLoading}
                     />
-                )
-            }
-
-            leftFirst={
-                  (
+                }
+                leftFirst={
                     <AddNewButton
                         btnVariant={'outline-secondary'}
                         buttonText={'Add new Book'}
@@ -62,44 +55,42 @@ const BookList = ({ setToast, setPositiveToast, setShowToast }) => {
                         loading={loading}
                         setLoading={setLoading}
                     />
-                )
-            }
-
-            leftSecond={
-                loading
-                ?
-                <div className='d-flex justify-content-center'><MainSpinner/></div>
-                : 
-                    books &&
-                    books.map((b) => {
-                        const lowerCaseName = b.title.toLowerCase();
-                        if (lowerCaseName.indexOf(search) > -1) {
-                            return (
-                                <Book
-                                    key={b.id}
-                                    book={b}
-                                    reloadNow={reloadNow}
-                                    reload={reload}
-                                    setPositiveToast={setPositiveToast}
-                                    setToast={setToast}
-                                    setShowToast={setShowToast}
-                                    editBook={editBooks}
-                                    setEditMode={setEditMode}
-                                    editMode={editMode}
-                                    setBookForEdit={setBookForEdit}
-                                    loading={loading}
-                                    setLoading={setLoading}
-                                />
-                                
-                            );
-                        } else {
-                            return null;
-                        }
-                    })}
-
+                }
+                leftSecond={
+                    loading ? (
+                        <div className="d-flex justify-content-center">
+                            <MainSpinner />
+                        </div>
+                    ) : (
+                        books &&
+                        books.map((b) => {
+                            const lowerCaseName = b.title.toLowerCase();
+                            if (lowerCaseName.indexOf(search) > -1) {
+                                return (
+                                    <Book
+                                        key={b.id}
+                                        book={b}
+                                        reloadNow={reloadNow}
+                                        reload={reload}
+                                        setPositiveToast={setPositiveToast}
+                                        setToast={setToast}
+                                        setShowToast={setShowToast}
+                                        editBook={editBooks}
+                                        setEditMode={setEditMode}
+                                        editMode={editMode}
+                                        setBookForEdit={setBookForEdit}
+                                        loading={loading}
+                                        setLoading={setLoading}
+                                    />
+                                );
+                            } else {
+                                return null;
+                            }
+                        })
+                    )
+                }
                 rightFirst={
-                    
-                     addNewMode && (
+                    addNewMode && (
                         <BookAdd
                             setAddNewMode={setAddNewMode}
                             setPositiveToast={setPositiveToast}
@@ -110,10 +101,9 @@ const BookList = ({ setToast, setPositiveToast, setShowToast }) => {
                         />
                     )
                 }
-
                 rightSecond={
-
-                     editMode && !addNewMode && (
+                    editMode &&
+                    !addNewMode && (
                         <BookEdit
                             setEditMode={setEditMode}
                             setPositiveToast={setPositiveToast}
@@ -127,7 +117,6 @@ const BookList = ({ setToast, setPositiveToast, setShowToast }) => {
                     )
                 }
             />
-
         </>
     );
 };

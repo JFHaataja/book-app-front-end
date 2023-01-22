@@ -1,5 +1,5 @@
 import Button from 'react-bootstrap/Button';
-import Delete from 'assets/Icon/Delete'
+import Delete from 'assets/Icon/Delete';
 
 function DeleteButton({
     clickHandler,
@@ -7,7 +7,7 @@ function DeleteButton({
     buttonId,
     dataCy,
     ariaLabel,
-    loading
+    loading,
 }) {
     return (
         <Button
@@ -19,9 +19,9 @@ function DeleteButton({
             data-cy={dataCy}
             aria-label={ariaLabel}
         >
-            <Delete/>
+            <Delete />
             {loading ? <>Loading..</> : <>Delete</>}
-            </Button>
+        </Button>
     );
 }
 

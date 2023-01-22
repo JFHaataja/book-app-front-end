@@ -15,9 +15,17 @@ const ToastMessage = ({ toast, positiveToast }) => {
     const toggleShowToast = () => setShowToast(!showToast);
 
     return (
-        <Toast className="position-absolute ms-lg-4 mt-3" show={showToast} onClose={toggleShowToast}>
+        <Toast
+            className="position-absolute ms-lg-4 mt-3"
+            show={showToast}
+            onClose={toggleShowToast}
+        >
             <Toast.Header>
-                <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
+                <img
+                    src="holder.js/20x20?text=%20"
+                    className="rounded me-2"
+                    alt=""
+                />
                 <strong className="me-auto">Book App</strong>
                 <small>Just now</small>
             </Toast.Header>
