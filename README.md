@@ -1,6 +1,6 @@
-# Book App
+# Book App Front End ("Book App")
 
-Book App is part of a book-related Full-Stack Web Application project. It is the SPA Front-End application for an ASP .NET Core REST API Back-End service. Both applications have been deployed and are running live on Azure (Back-End application) and Vercel (Front-End application).
+Book App Front End (name in the app: Book App) is part of a book-related Full-Stack Web Application project. It is the SPA Front-End application for an ASP .NET Core REST API Back-End service. Both applications have been deployed and are running live on Azure (Back-End application) and Vercel (Front-End application).
 
 ## Application overview
 
@@ -8,9 +8,9 @@ This is a simple book related CRUD application. App data comes from a single Azu
 
 ## Live demo
 
-You can check out the live demo of this app by clicking the link below.
+You can check out the live demo of this app by clicking the link below:
 
-[Live demo of Book App](https://bookapp.vercel.app/)
+[Live demo of Book App](https://book-app-front-end.vercel.app/)
 
 ## Get started
 
@@ -28,7 +28,7 @@ npm install
 
 After everything has finished installing, you need to then create an empty .env file at the root level of the project:
 
-![image](https://user-images.githubusercontent.com/96774962/210604332-98094c22-d35b-467e-b79a-388dc4e82def.png)
+![image](https://user-images.githubusercontent.com/96774962/214104747-da966816-6204-4b81-927d-17e5e3eb35d7.png)
 
 After that open the .env file and paste the necessary environmental variable into it.
 
