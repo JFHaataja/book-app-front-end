@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# Book App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Book App is part of a book-related Full-Stack Web Application project. It is the SPA Front-End application for an ASP .NET Core REST API Back-End service. Both applications have been deployed and are running live on Azure (Back-End application) and Vercel (Front-End application).
 
-## Available Scripts
+## Application overview
 
-In the project directory, you can run:
+This is a simple book related CRUD application. App data comes from a single Azure cloud hosted MS SQL database table. Application users can perform CRUD operations on books i.e. they can add a new book on the list, edit books and delete them. Users can also search for books using book names.
 
-### `npm start`
+## Live demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+You can check out the live demo of this app by clicking the link below.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[Live demo of Book App](https://bookapp.vercel.app/)
 
-### `npm test`
+## Get started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Prerequisites:
 
-### `npm run build`
+- Node
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To set up the app execute the following commands.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git clone https://github.com/JFHaataja/book-app-front-end
+cd book-app-front-end
+npm install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+After everything has finished installing, you need to then create an empty .env file at the root level of the project:
 
-### `npm run eject`
+![image](https://user-images.githubusercontent.com/96774962/210604332-98094c22-d35b-467e-b79a-388dc4e82def.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+After that open the .env file and paste the necessary environmental variable into it.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`npm start`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in the browser.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`npm run build`
 
-## Learn More
+Builds the app for production to the build folder.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+`npm run lint`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Analyzes the code with ESlint.
 
-### Code Splitting
+`npm run format`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Formats the app with Prettier.
 
-### Analyzing the Bundle Size
+`npm run eject`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Note: this is a one-way operation. Once you `eject`, you can't go back!
 
-### Making a Progressive Web App
+If you aren't satisfied with the build tool and configuration choices, you can eject at any time. This command will remove the single build dependency from your project.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Important
 
-### Advanced Configuration
+In order to run this application in your local machine, you need to add an empty .env file into the root of the project and paste the environmental variable containing the Back-End API End-Point URL. (Note: if you're from Buutti, you can find the correct environmental variable in a text file containing all necessary information about this project.)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Project Structure
 
-### Deployment
+```bash
+src
+|
++-- api               # Axios API service file for fetching data from the REST API
+|
++-- assets            # React-icons and a SASS file
+|
++-- components        # shared components used across the entire application
+|
++-- services          # book service files
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Tech Stack
 
-### `npm run build` fails to minify
+**Front End:** React.js, SASS, React-Bootstrap, Vercel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Back End:** ASP .NET Core, Microsoft SQL, Microsoft Azure
+
+## Testing
+
+This app includes some Cypress E2E tests.
+
+To open up Cypress testing tool run the following command:
+
+`npm run cypress:open`
+
+You can run the tests after you have added the necessary .env content.
+
+## Contact
+
+If you have any questions or something's not working, please send me an email at jon.haataja@gmail.com. Thank you!

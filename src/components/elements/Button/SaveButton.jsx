@@ -1,5 +1,5 @@
 import Button from 'react-bootstrap/Button';
-import MdSave from 'assets/Icon/Save'
+import MdSave from 'assets/Icon/Save';
 
 function SaveButton({
     clickHandler,
@@ -7,7 +7,7 @@ function SaveButton({
     buttonId,
     dataCy,
     ariaLabel,
-    loading
+    loading,
 }) {
     return (
         <Button
@@ -19,9 +19,8 @@ function SaveButton({
             data-cy={dataCy}
             aria-label={ariaLabel}
         >
-            <MdSave/>
+            <MdSave />
             {loading ? <>Loading..</> : <>Save</>}
-            
         </Button>
     );
 }
