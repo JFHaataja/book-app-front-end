@@ -9,8 +9,12 @@ function Footer() {
         <>
             <Container fluid className="bg-dark py-4 bottom-0">
                 <h3 className="d-flex justify-content-center text-center fs-6 text-white">
-                    &copy;
-                    {today.getFullYear()}
+                    <span className="me-1">
+                        &copy;
+                    </span>
+                    <span className="me-1">
+                        {today.getFullYear()}
+                    </span>
                     <Book />
                     Book App
                 </h3>
