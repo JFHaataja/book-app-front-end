@@ -15,7 +15,7 @@ function ListItem({
         <>
             <ListGroup.Item
                 onChange={onChangeHandler}
-                className="my-2 py-4 d-flex justify-content-between align-items-between align-content-between"
+                className="my-2 py-4 d-flex justify-content-between align-items-between align-content-between rounded-4"
             >
                 <div>
                     <Book />
