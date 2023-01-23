@@ -16,7 +16,7 @@ You can check out the live demo of this app by clicking the link below.
 
 Prerequisites:
 
-- Node
+-   Node
 
 To set up the app execute the following commands.
 
