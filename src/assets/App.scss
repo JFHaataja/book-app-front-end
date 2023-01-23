@@ -1,7 +1,7 @@
 $theme-colors: (
   "primary": #CDA16A,
   "primary-darker": #9a7951,
-  "secondary": #6A96CD,
+  "secondary": #F3F3F4,
   "success": #98c5af,
   "danger": #CD6A6A,
   "dark": #251d13,
@@ -34,14 +34,6 @@ body {
 
 .vh-50 {
   height: 50vh;
-}
-
-.bg-negative {
-  background-color: $danger!important;
-}
-
-.bg-positive {
-  background-color: $success!important;
 }
 
 .rounded-20 {

@@ -4,13 +4,7 @@ import Form from 'react-bootstrap/Form';
 import FormGroup from 'components/elements/Form/FormGroup/FormGroup';
 import SaveButton from 'components/elements/Button/SaveButton';
 
-const BookEdit = ({
-    // editMode,
-    setEditMode,
-    setToast,
-    setShowToast,
-    bookForEdit,
-}) => {
+const BookEdit = ({ setEditMode, setToast, setShowToast, bookForEdit }) => {
     const [newBookId] = useState(bookForEdit.id);
     const [newAuthor, setNewAuthor] = useState(bookForEdit.author);
     const [newTitle, setNewTitle] = useState(bookForEdit.title);

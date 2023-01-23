@@ -1,13 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import ArrowBack from 'assets/Icon/ArrowBack';
 
-function ReturnButton({
-    clickHandler,
-    buttonId,
-    dataCy,
-    ariaLabel,
-    btnType
-}) {
+function ReturnButton({ clickHandler, buttonId, dataCy, ariaLabel, btnType }) {
     return (
         <Button
             variant="primary"
@@ -18,7 +12,7 @@ function ReturnButton({
             data-cy={dataCy}
             aria-label={ariaLabel}
         >
-            <ArrowBack/>
+            <ArrowBack />
             Go Back
         </Button>
     );
