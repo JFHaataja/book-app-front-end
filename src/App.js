@@ -4,19 +4,18 @@ import BookList from 'services/BookList';
 import ToastMessage from 'components/elements/Message/Toast';
 
 function App() {
+
     const [toast, setToast] = useState('');
-    const [positiveToast, setPositiveToast] = useState(true);
     const [showToast, setShowToast] = useState('');
 
     return (
         <>
             <Layout>
                 {showToast && (
-                    <ToastMessage toast={toast} positiveToast={positiveToast} />
+                    <ToastMessage toast={toast} />
                 )}
                 <BookList
                     setToast={setToast}
-                    setPositiveToast={setPositiveToast}
                     setShowToast={setShowToast}
                 />
             </Layout>

@@ -8,7 +8,7 @@ import SearchBar from 'components/elements/Search/SearchBar';
 import MainSpinner from 'components/elements/Spinner/Spinner';
 import ContentLayout from 'components/layout/Content/ContentLayout';
 
-const BookList = ({ setToast, setPositiveToast, setShowToast }) => {
+const BookList = ({ setToast, setShowToast }) => {
     const [books, setBooks] = useState([]);
     const [addNewMode, setAddNewMode] = useState(false);
     const [editMode, setEditMode] = useState(false);
@@ -72,7 +72,6 @@ const BookList = ({ setToast, setPositiveToast, setShowToast }) => {
                                         book={b}
                                         reloadNow={reloadNow}
                                         reload={reload}
-                                        setPositiveToast={setPositiveToast}
                                         setToast={setToast}
                                         setShowToast={setShowToast}
                                         editBook={editBooks}
@@ -93,7 +92,6 @@ const BookList = ({ setToast, setPositiveToast, setShowToast }) => {
                     addNewMode && (
                         <BookAdd
                             setAddNewMode={setAddNewMode}
-                            setPositiveToast={setPositiveToast}
                             setToast={setToast}
                             setShowToast={setShowToast}
                             loading={loading}
@@ -106,7 +104,6 @@ const BookList = ({ setToast, setPositiveToast, setShowToast }) => {
                     !addNewMode && (
                         <BookEdit
                             setEditMode={setEditMode}
-                            setPositiveToast={setPositiveToast}
                             setToast={setToast}
                             setShowToast={setShowToast}
                             bookForEdit={bookForEdit}

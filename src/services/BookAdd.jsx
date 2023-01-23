@@ -7,7 +7,6 @@ import SaveButton from 'components/elements/Button/SaveButton';
 
 const BookAdd = ({
     setAddNewMode,
-    setPositiveToast,
     setToast,
     setShowToast,
 }) => {
@@ -26,23 +25,21 @@ const BookAdd = ({
             .then((response) => {
                 if (response.status === 200) {
                     setToast('Added new book ' + newBook.title);
-                    setPositiveToast(true);
                     setShowToast(true);
                     window.scrollBy(0, -10000);
                     setTimeout(() => {
                         setShowToast(false);
-                    }, 5000);
+                    }, 3000);
                     setAddNewMode(false);
                 }
             })
             .catch((error) => {
                 setToast(error);
-                setPositiveToast(false);
                 setShowToast(true);
                 window.scrollBy(0, -10000);
                 setTimeout(() => {
                     setShowToast(false);
-                }, 5000);
+                }, 3000);
             });
     };
 

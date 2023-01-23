@@ -2,14 +2,7 @@ import { useState } from 'react';
 import 'assets/App.scss';
 import Toast from 'react-bootstrap/Toast';
 
-const ToastMessage = ({ toast, positiveToast }) => {
-    let style = '';
-
-    if (positiveToast === true) {
-        style = 'bg-success';
-    } else {
-        style = 'bg-danger';
-    }
+const ToastMessage = (props) => {
 
     const [showToast, setShowToast] = useState(true);
     const toggleShowToast = () => setShowToast(!showToast);
@@ -29,7 +22,7 @@ const ToastMessage = ({ toast, positiveToast }) => {
                 <strong className="me-auto">Book App</strong>
                 <small>Just now</small>
             </Toast.Header>
-            <Toast.Body className={style}>{toast}</Toast.Body>
+            <Toast.Body>{props.toast}</Toast.Body>
         </Toast>
     );
 };

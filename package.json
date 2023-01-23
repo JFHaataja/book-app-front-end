@@ -22,6 +22,7 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
+        "lint": "eslint src/**/*.js src/**/*.jsx",
         "format": "prettier --write \"**/*.+(js|jsx|json|css|md)\"",
         "cypress:open": "cypress open"
     },
@@ -46,6 +47,8 @@
     "devDependencies": {
         "@testing-library/cypress": "^9.0.0",
         "cypress": "^12.3.0",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-plugin-jsdoc": "^39.6.7",
         "prettier": "2.8.3"
     }
 }
