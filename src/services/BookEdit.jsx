@@ -31,12 +31,13 @@ const BookEdit = ({ setEditMode, setToast, setShowToast, bookForEdit }) => {
                         setShowToast(false);
                     }, 3000);
                     setEditMode(false);
+                    // reloadNow(reload);
                 }
             })
             .catch((error) => {
                 setToast(error);
                 setShowToast(true);
-                window.scrollBy(0, -10000);
+                // window.scrollBy(0, -10000);
                 setTimeout(() => {
                     setShowToast(false);
                 }, 3000);
