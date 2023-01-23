@@ -2,8 +2,15 @@ import BookService from 'api/Books';
 import ListGroup from 'components/elements/List/ListGroup';
 import ListItem from 'components/elements/List/ListItem';
 
-const Book = ({ book, editBook, setAddNewMode, setToast, setShowToast, reload, reloadNow }) => {
-
+const Book = ({
+    book,
+    editBook,
+    setAddNewMode,
+    setToast,
+    setShowToast,
+    reload,
+    reloadNow,
+}) => {
     const deleteBook = (book) => {
         const response = window.confirm(
             `Are you sure you want to delete ${book.title}?`
@@ -20,7 +27,6 @@ const Book = ({ book, editBook, setAddNewMode, setToast, setShowToast, reload, r
                             setShowToast(false);
                         }, 5000);
                         reloadNow(!reload);
-
                     }
                 })
                 .catch((error) => {

@@ -3,7 +3,6 @@ import 'assets/App.scss';
 import Toast from 'react-bootstrap/Toast';
 
 const ToastMessage = (props) => {
-
     const [showToast, setShowToast] = useState(true);
     const toggleShowToast = () => setShowToast(!showToast);
 

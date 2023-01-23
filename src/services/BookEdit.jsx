@@ -50,8 +50,6 @@ const BookEdit = ({
             });
     };
 
-
-
     return (
         <div className="mt-4">
             <h2 className="text-dark mb-3">Edit Book</h2>

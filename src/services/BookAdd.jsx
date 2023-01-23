@@ -5,11 +5,7 @@ import Form from 'react-bootstrap/Form';
 import FormGroup from 'components/elements/Form/FormGroup/FormGroup';
 import SaveButton from 'components/elements/Button/SaveButton';
 
-const BookAdd = ({
-    setAddNewMode,
-    setToast,
-    setShowToast,
-}) => {
+const BookAdd = ({ setAddNewMode, setToast, setShowToast }) => {
     const [newTitle, setNewTitle] = useState('');
     const [newAuthor, setNewAuthor] = useState('');
     const [newDescription, setNewDescription] = useState('');
@@ -80,10 +76,7 @@ const BookAdd = ({
                     formGroupControlId="DescriptionAdd"
                 />
                 <div className="d-flex mt-5 justify-content-end">
-                    <SaveButton
-                        btnVariant={'primary'}
-                        btnType="submit"
-                    />
+                    <SaveButton btnVariant={'primary'} btnType="submit" />
                 </div>
             </Form>
         </Container>

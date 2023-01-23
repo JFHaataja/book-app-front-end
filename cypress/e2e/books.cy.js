@@ -16,7 +16,9 @@ describe('Add, edit and delete books', () => {
         cy.findByRole('button', { name: /save/i }).click();
         cy.wait(2000);
         // verify that the new book was added to the list
-        cy.findByText('George R.R. Martin: A Game of Thrones').should('be.visible');
+        cy.findByText('George R.R. Martin: A Game of Thrones').should(
+            'be.visible'
+        );
 
         // EDIT BOOK
         // click edit button to open the edit mode
@@ -28,7 +30,7 @@ describe('Add, edit and delete books', () => {
         cy.wait(3000);
         // verify that the changes were saved on the book
         cy.findByText('George R.R. Martin: GOT').should('be.visible');
-                
+
         // DELETE BOOK
         // click delete button of the book called GOT
         cy.get('[data-cy="GOT_delete"]').click();

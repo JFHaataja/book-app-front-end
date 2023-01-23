@@ -12,7 +12,12 @@
     ],
     "overrides": [
         {
-            "files": ["**/*.spec.js", "**/*.spec.jsx", "**/*_spec.cy.js", "**/*.cy.js"]
+            "files": [
+                "**/*.spec.js",
+                "**/*.spec.jsx",
+                "**/*_spec.cy.js",
+                "**/*.cy.js"
+            ]
         }
     ],
     "parserOptions": {
@@ -21,7 +26,7 @@
         "ecmaFeatures": {
             "jsx": true,
             "modules": true
-          }
+        }
     },
     "plugins": ["react", "jsdoc"],
     "rules": {

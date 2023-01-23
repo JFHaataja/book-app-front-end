@@ -4,20 +4,14 @@ import BookList from 'services/BookList';
 import ToastMessage from 'components/elements/Message/Toast';
 
 function App() {
-
     const [toast, setToast] = useState('');
     const [showToast, setShowToast] = useState('');
 
     return (
         <>
             <Layout>
-                {showToast && (
-                    <ToastMessage toast={toast} />
-                )}
-                <BookList
-                    setToast={setToast}
-                    setShowToast={setShowToast}
-                />
+                {showToast && <ToastMessage toast={toast} />}
+                <BookList setToast={setToast} setShowToast={setShowToast} />
             </Layout>
         </>
     );
